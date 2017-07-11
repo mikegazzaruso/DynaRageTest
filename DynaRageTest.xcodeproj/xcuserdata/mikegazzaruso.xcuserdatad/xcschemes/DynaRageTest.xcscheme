@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C42F34FF1C057E03000E937C"
+               BuildableName = "AudioKit.framework"
+               BlueprintName = "AudioKit"
+               ReferencedContainer = "container:../AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "522650681F144FB7005EAFB0"
                BuildableName = "DynaRageTest.app"
                BlueprintName = "DynaRageTest"

@@ -14,6 +14,16 @@
 		522650771F144FB7005EAFB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522650751F144FB7005EAFB0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5226509A1F145A02005EAFB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 522650961F145A00005EAFB0 /* AudioKit For iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C42F35001C057E03000E937C;
+			remoteInfo = AudioKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		522650691F144FB7005EAFB0 /* DynaRageTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynaRageTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5226506C1F144FB7005EAFB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +32,7 @@
 		522650731F144FB7005EAFB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		522650761F144FB7005EAFB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		522650781F144FB7005EAFB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		522650961F145A00005EAFB0 /* AudioKit For iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AudioKit For iOS.xcodeproj"; path = "../AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +49,7 @@
 		522650601F144FB7005EAFB0 = {
 			isa = PBXGroup;
 			children = (
+				522650961F145A00005EAFB0 /* AudioKit For iOS.xcodeproj */,
 				5226506B1F144FB7005EAFB0 /* DynaRageTest */,
 				5226506A1F144FB7005EAFB0 /* Products */,
 			);
@@ -62,6 +74,14 @@
 				522650781F144FB7005EAFB0 /* Info.plist */,
 			);
 			path = DynaRageTest;
+			sourceTree = "<group>";
+		};
+		522650971F145A00005EAFB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5226509B1F145A02005EAFB0 /* AudioKit.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,12 +132,28 @@
 			mainGroup = 522650601F144FB7005EAFB0;
 			productRefGroup = 5226506A1F144FB7005EAFB0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 522650971F145A00005EAFB0 /* Products */;
+					ProjectRef = 522650961F145A00005EAFB0 /* AudioKit For iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				522650681F144FB7005EAFB0 /* DynaRageTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5226509B1F145A02005EAFB0 /* AudioKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AudioKit.framework;
+			remoteRef = 5226509A1F145A02005EAFB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		522650671F144FB7005EAFB0 /* Resources */ = {
@@ -304,6 +340,7 @@
 				5226507D1F144FB7005EAFB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
