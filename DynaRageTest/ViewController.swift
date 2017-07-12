@@ -12,6 +12,8 @@ import AudioKit
 class ViewController: UIViewController {
     
     var dynaRage: AKDynaRageCompressor!
+    var rageIsOnButton: AKButton!
+    var dynarageBypassButton: AKBypassButton!
     
     //let input = AKStereoInput()
 
@@ -31,7 +33,6 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-        
         setupUI()
     }
 
@@ -43,44 +44,56 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.addArrangedSubview(AKPropertySlider(
-            property: "Attack Amount",
-            format: "%0.2f s",
+            property: "Attack",
+            format: "%0.2f ms",
             value: self.dynaRage.attackTime, minimum: 0.1, maximum: 500.0,
             color: UIColor.green) { sliderValue in
                 self.dynaRage.attackTime = sliderValue
-        })
+            }
+        )
         
         stackView.addArrangedSubview(AKPropertySlider(
-            property: "Release Amount",
-            format: "%0.2f s",
+            property: "Release",
+            format: "%0.2f ms",
             value: self.dynaRage.releaseTime, minimum: 0.1, maximum: 500.0,
             color: UIColor.green) { sliderValue in
                 self.dynaRage.releaseTime = sliderValue
         })
         
         stackView.addArrangedSubview(AKPropertySlider(
-            property: "Threshold Amount",
-            format: "%0.2f s",
+            property: "Threshold",
+            format: "%0.2f dB",
             value: self.dynaRage.threshold, minimum: -100.0, maximum: 0.0,
             color: UIColor.green) { sliderValue in
                 self.dynaRage.threshold = sliderValue
         })
         
         stackView.addArrangedSubview(AKPropertySlider(
-            property: "Ratio Amount",
-            format: "%0.2f s",
-            value: self.dynaRage.ratio, minimum: 0.1, maximum: 20.0,
+            property: "Ratio",
+            format: "1:%0.2f",
+            value: self.dynaRage.ratio, minimum: 1.0, maximum: 20.0,
             color: UIColor.green) { sliderValue in
                 self.dynaRage.ratio = sliderValue
         })
         
         stackView.addArrangedSubview(AKPropertySlider(
             property: "Rage Amount",
-            format: "%0.2f s",
+            format: "%0.2f",
             value: self.dynaRage.rageAmount, minimum: 0.1, maximum: 20.0,
             color: UIColor.green) { sliderValue in
                 self.dynaRage.rageAmount = sliderValue
         })
+        
+        rageIsOnButton = AKButton(title: "Rage ON") {
+            self.dynaRage.rageIsOn = !self.dynaRage.rageIsOn
+            self.updateButton(self.rageIsOnButton, isOn: self.dynaRage.rageIsOn)
+            return ""
+        }
+        
+        dynarageBypassButton = AKBypassButton(node: self.dynaRage)
+        
+        stackView.addArrangedSubview(rageIsOnButton)
+        stackView.addArrangedSubview(dynarageBypassButton)
         
         view.addSubview(stackView)
         
@@ -90,5 +103,17 @@ class ViewController: UIViewController {
         stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
+    
+    private func updateButton(_ button: AKButton, isOn: Bool) {
+        if (button == rageIsOnButton) {
+            if (isOn) {
+                button.title = "RAGE ON"
+                button.color = .green
+            }
+            else {
+                button.title = "RAGE OFF"
+                button.color = .red
+            }
+        }
+    }
 }
-
