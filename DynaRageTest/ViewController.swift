@@ -11,18 +11,26 @@ import AudioKit
 
 class ViewController: UIViewController {
     
-    var rageProcessor: AKDynaRageCompressor!
+    var dynaRage: AKDynaRageCompressor!
     
-    let input = AKStereoInput()
-
+    //let input = AKStereoInput()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        do {
+            let mixloop = try AKAudioFile(readFileName: "houze.wav", baseDir: .resources)
         
-        rageProcessor = AKDynaRageCompressor(input)
-        AudioKit.output = rageProcessor
-        
-        AudioKit.start()
+            let player = try AKAudioPlayer(file: mixloop) {
+                print("completion callback has been triggered!")
+            }
+            dynaRage = AKDynaRageCompressor(player)
+            AudioKit.output = dynaRage
+            AudioKit.start()
+            player.looping = true
+            player.start()    
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
         
         setupUI()
     }
@@ -35,11 +43,43 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.addArrangedSubview(AKPropertySlider(
+            property: "Attack Amount",
+            format: "%0.2f s",
+            value: self.dynaRage.attackTime, minimum: 0.1, maximum: 500.0,
+            color: UIColor.green) { sliderValue in
+                self.dynaRage.attackTime = sliderValue
+        })
+        
+        stackView.addArrangedSubview(AKPropertySlider(
+            property: "Release Amount",
+            format: "%0.2f s",
+            value: self.dynaRage.releaseTime, minimum: 0.1, maximum: 500.0,
+            color: UIColor.green) { sliderValue in
+                self.dynaRage.releaseTime = sliderValue
+        })
+        
+        stackView.addArrangedSubview(AKPropertySlider(
+            property: "Threshold Amount",
+            format: "%0.2f s",
+            value: self.dynaRage.threshold, minimum: -100.0, maximum: 0.0,
+            color: UIColor.green) { sliderValue in
+                self.dynaRage.threshold = sliderValue
+        })
+        
+        stackView.addArrangedSubview(AKPropertySlider(
+            property: "Ratio Amount",
+            format: "%0.2f s",
+            value: self.dynaRage.ratio, minimum: 0.1, maximum: 20.0,
+            color: UIColor.green) { sliderValue in
+                self.dynaRage.ratio = sliderValue
+        })
+        
+        stackView.addArrangedSubview(AKPropertySlider(
             property: "Rage Amount",
             format: "%0.2f s",
-            value: self.rageProcessor.rageAmount, minimum: 0.1, maximum: 20.0,
+            value: self.dynaRage.rageAmount, minimum: 0.1, maximum: 20.0,
             color: UIColor.green) { sliderValue in
-                self.rageProcessor.rageAmount = sliderValue
+                self.dynaRage.rageAmount = sliderValue
         })
         
         view.addSubview(stackView)

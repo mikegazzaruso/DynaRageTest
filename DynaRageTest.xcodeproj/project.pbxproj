@@ -14,6 +14,7 @@
 		522650771F144FB7005EAFB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522650751F144FB7005EAFB0 /* LaunchScreen.storyboard */; };
 		529DB0721F152A63008AA8EB /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522650A21F145FAA005EAFB0 /* AudioKit.framework */; };
 		529DB0731F152A63008AA8EB /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522650A21F145FAA005EAFB0 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52E5ED691F16599F00B1CBCD /* houze.wav in Resources */ = {isa = PBXBuildFile; fileRef = 52E5ED681F16599F00B1CBCD /* houze.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		522650761F144FB7005EAFB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		522650781F144FB7005EAFB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5226509D1F145FAA005EAFB0 /* AudioKit For iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AudioKit For iOS.xcodeproj"; path = "../AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj"; sourceTree = "<group>"; };
+		52E5ED681F16599F00B1CBCD /* houze.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = houze.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		5226506B1F144FB7005EAFB0 /* DynaRageTest */ = {
 			isa = PBXGroup;
 			children = (
+				52E5ED6A1F165CD600B1CBCD /* Resources */,
 				5226506C1F144FB7005EAFB0 /* AppDelegate.swift */,
 				5226506E1F144FB7005EAFB0 /* ViewController.swift */,
 				522650701F144FB7005EAFB0 /* Main.storyboard */,
@@ -106,6 +109,14 @@
 				522650A21F145FAA005EAFB0 /* AudioKit.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		52E5ED6A1F165CD600B1CBCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52E5ED681F16599F00B1CBCD /* houze.wav */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E5ED691F16599F00B1CBCD /* houze.wav in Resources */,
 				522650771F144FB7005EAFB0 /* LaunchScreen.storyboard in Resources */,
 				522650741F144FB7005EAFB0 /* Assets.xcassets in Resources */,
 				522650721F144FB7005EAFB0 /* Main.storyboard in Resources */,
