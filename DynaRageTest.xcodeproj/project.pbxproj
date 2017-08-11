@@ -17,16 +17,6 @@
 		52E5ED691F16599F00B1CBCD /* houze.wav in Resources */ = {isa = PBXBuildFile; fileRef = 52E5ED681F16599F00B1CBCD /* houze.wav */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		522650A11F145FAA005EAFB0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5226509D1F145FAA005EAFB0 /* AudioKit For iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C42F35001C057E03000E937C;
-			remoteInfo = AudioKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		5233F6CD1F3DD8650090DF11 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -49,7 +39,6 @@
 		522650731F144FB7005EAFB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		522650761F144FB7005EAFB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		522650781F144FB7005EAFB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5226509D1F145FAA005EAFB0 /* AudioKit For iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AudioKit For iOS.xcodeproj"; path = "../AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj"; sourceTree = "<group>"; };
 		5233F6CF1F3DD8D80090DF11 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		52E5ED681F16599F00B1CBCD /* houze.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = houze.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +58,6 @@
 		522650601F144FB7005EAFB0 = {
 			isa = PBXGroup;
 			children = (
-				5226509D1F145FAA005EAFB0 /* AudioKit For iOS.xcodeproj */,
 				5226506B1F144FB7005EAFB0 /* DynaRageTest */,
 				5226506A1F144FB7005EAFB0 /* Products */,
 			);
@@ -96,14 +84,6 @@
 				522650781F144FB7005EAFB0 /* Info.plist */,
 			);
 			path = DynaRageTest;
-			sourceTree = "<group>";
-		};
-		5226509E1F145FAA005EAFB0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				522650A21F145FAA005EAFB0 /* AudioKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5233F6C11F3DD2B10090DF11 /* Frameworks */ = {
@@ -171,28 +151,12 @@
 			mainGroup = 522650601F144FB7005EAFB0;
 			productRefGroup = 5226506A1F144FB7005EAFB0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5226509E1F145FAA005EAFB0 /* Products */;
-					ProjectRef = 5226509D1F145FAA005EAFB0 /* AudioKit For iOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				522650681F144FB7005EAFB0 /* DynaRageTest */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		522650A21F145FAA005EAFB0 /* AudioKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AudioKit.framework;
-			remoteRef = 522650A11F145FAA005EAFB0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		522650671F144FB7005EAFB0 /* Resources */ = {
