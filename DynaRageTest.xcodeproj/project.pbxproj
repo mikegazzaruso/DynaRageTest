@@ -25,6 +25,13 @@
 			remoteGlobalIDString = C42F35001C057E03000E937C;
 			remoteInfo = AudioKit;
 		};
+		5233F6C71F3DD5D50090DF11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5226509D1F145FAA005EAFB0 /* AudioKit For iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C42F34FF1C057E03000E937C;
+			remoteInfo = AudioKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,6 +144,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5233F6C81F3DD5D50090DF11 /* PBXTargetDependency */,
 			);
 			name = DynaRageTest;
 			productName = DynaRageTest;
@@ -219,6 +227,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5233F6C81F3DD5D50090DF11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AudioKit;
+			targetProxy = 5233F6C71F3DD5D50090DF11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		522650701F144FB7005EAFB0 /* Main.storyboard */ = {
