@@ -12,5 +12,5 @@ https://groups.google.com/forum/#!forum/audiokit
 ### Version 1
 
 * Work in progress
-
+* Added CI with Bitrise
 
